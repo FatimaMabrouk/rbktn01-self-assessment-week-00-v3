@@ -49,8 +49,64 @@
 // returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
 
 
+// each function for iteration .
+function each(coll,fun) {
+	if(Array.isArray(coll)) {
+	  for(var i =  0; i < coll.length; i++){
+		fun(coll[i],i);
+	   }
+   } else {
+   	   for(var key in coll){
+   	 	 fun(coll[key],key);
+   	   }
+    }	
+} 
+// check each function ..
+function check(array){
+	var arr = [];
+	each(array,function(element,i){
+	     arr.push(element + 1);
+	});
+  return arr;
+	
+}
+// fillter function 
+function filter(array,predicate){
+  each(array,function(element,i){
+  	if(predicate(element)){
+  		acc.push(element);
+  	}
+  	return acc;
+  });
+
+}
+// check filter 
+function checkFilte(array){
+	return filter(array,function(element,prd){
+	  return element%2 === 0;
+	});
+}
+
+
 
 var filterFamilyMembers = function (familyTree, truthTest) {
-  // All your code in this function body
+  // declaer empty array  [] to save result;
+  var result = [];
+  // using recirsion is its array of object ;
+  //  using filter function to get the pass truth;
+  // for in obj to get the same pred. 
+  
+
 };
+
+
+// var livesInBerkeley = function (familyMember) {
+//   return familyMember.location === 'Berkeley';
+// }
+//
+// filterFamilyMembers(familyTree, livesInBerkeley)
+//
+// returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
+
+
 
